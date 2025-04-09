@@ -20,5 +20,5 @@ spec:
   volumes:
     - name: workspace-volume
       hostPath:
-        path: /Users/ojeongmin/Downloads/kafkademo # 로컬 환경과 mount했기 때문에 로컬 서버 코드 실행이 가능
+        path: /Users/ojeongmin/spring-kafka-template # 로컬 환경과 mount했기 때문에 로컬 서버 코드 실행이 가능
         type: Directory
