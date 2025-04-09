@@ -487,7 +487,7 @@ controller:
   ## @param controller.replicaCount Number of Kafka controller-eligible nodes
   ## Ignore this section if running in Zookeeper mode.
   ##
-  replicaCount: 3
+  replicaCount: 0
   ## @param controller.controllerOnly If set to true, controller nodes will be deployed as dedicated controllers, instead of controller+broker processes.
   ##
   controllerOnly: false
@@ -947,7 +947,7 @@ controller:
 broker:
   ## @param broker.replicaCount Number of Kafka broker-only nodes
   ##
-  replicaCount: 0
+  replicaCount: 3
   ## @param broker.minId Minimal node.id values for broker-only nodes. Do not change after first initialization.
   ## Broker-only id increment their ID starting at this minimal value.
   ## We recommend setting this this value high enough, as IDs under this value will be used by controller-eligible nodes
@@ -2371,7 +2371,7 @@ provisioning:
 kraft:
   ## @param kraft.enabled Switch to enable or disable the KRaft mode for Kafka
   ##
-  enabled: true
+  enabled: false
   ## @param kraft.existingClusterIdSecret Name of the secret containing the cluster ID for the Kafka KRaft cluster. This is incompatible with the clusterId parameter. If both are set, the existingClusterIdSecret will be used
   existingClusterIdSecret: ""
   ## @param kraft.clusterId Kafka Kraft cluster ID. If not set, a random cluster ID will be generated the first time Kraft is initialized.
@@ -2395,10 +2395,10 @@ zookeeperChrootPath: ""
 zookeeper:
   ## @param zookeeper.enabled Switch to enable or disable the ZooKeeper helm chart. Must be false if you use KRaft mode.
   ##
-  enabled: false
+  enabled: true
   ## @param zookeeper.replicaCount Number of ZooKeeper nodes
   ##
-  replicaCount: 1
+  replicaCount: 3
   ## ZooKeeper authentication
   ##
   auth:
